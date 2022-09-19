@@ -2,6 +2,7 @@
 Le jeu BoulderDash mais en Python!
 
 ## Projet effectué avec Yohan ASTIER
+## Premier projet en DUT Informatique et en études post BAC en général
 
 ## Lancer une partie
 
@@ -16,6 +17,8 @@ Lancer "menu.py", un menu apparaît avec différentes options :
     - Si le niveau entré possède une sauvegarde, le bouton "S" deviendra vert et vous pourrez la charger en cliquant dessus.
 
 # Informations supplémentaires du déroulement du projet
+Ces informations étaient à la base un rapport de développement donné aux professeurs afin de savoir comment s'est déroulé le projet pour nous.
+Je l'inclus afin que vous puissiez avoir plus d'informations.
 
 PROJET PYTHON ASTIER Yohan, GARCIA CALZADA Alan 
 
