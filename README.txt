@@ -1,3 +1,22 @@
+# BoulderDash
+Le jeu BoulderDash mais en Python!
+
+## Projet effectuÃ© avec Yohan ASTIER
+
+## Lancer une partie
+
+Lancer "menu.py", un menu apparaÃ®t avec diffÃ©rentes options :
+
+- "HD"/"LD", permet de changer entre un jeu avec des graphismes basiques (rectangles et cercles) (LD) et un jeu avec des des images (HD), si votre systÃ¨me a du mal Ã  faire tourner le jeu, le mieux serait de passer en mode "LD".
+- "Jouer", permet de lancer une partie dans un niveau alÃ©atoire.
+- "S", permet de lancer la derniÃ¨re sauvegarde.
+- "Niveaux", permet d'entrer dans le menu de sÃ©lection de niveaux et de sauvegardes : 
+    - Lorsque vous y accÃ©dez, le bouton "S" deviendra rouge.
+    - Vous pourrez entrer au clavier le nom d'un niveau, si ce dernier est trouvÃ© alors son nom deviendra vert et vous pourrez cliquer sur jouer pour le lancer.
+    - Si le niveau entrÃ© possÃ¨de une sauvegarde, le bouton "S" deviendra vert et vous pourrez la charger en cliquant dessus.
+
+# Informations supplÃ©mentaires du dÃ©roulement du projet
+
 PROJET PYTHON ASTIER Yohan, GARCIA CALZADA Alan 
 
 ****************************************PHASE 1****************************************
@@ -5,85 +24,85 @@ PROJET PYTHON ASTIER Yohan, GARCIA CALZADA Alan
 Dans ce projet, nous avons produit un programme reproduisant le jeu Boulder Dash.
 Notre programme peut: 
 
--Lire un niveau à partir d'une variable de type string (Permettre de lire à partir d'un fichier txt ne devrait pas être plus dur.
--Appliquer des textures sur les différents types de blocs.
+-Lire un niveau Ã  partir d'une variable de type string (Permettre de lire Ã  partir d'un fichier txt ne devrait pas Ãªtre plus dur.
+-Appliquer des textures sur les diffÃ©rents types de blocs.
 -Deplacer un personnage.
 -Pousser un rocher et le faire tomber si aucun bloc ne se situe en dessous.
--Tuer le personnage si il a un rocher au dessus de lui et qu'il se déplace vers le bas (La solution sera expliquée plus tard dans le document).
+-Tuer le personnage si il a un rocher au dessus de lui et qu'il se dÃ©place vers le bas (La solution sera expliquÃ©e plus tard dans le document).
 -Ramasser des diamants et creuser la terre.
--Aller à la sortie pour finir le niveau.
--Un mode reset qui remet le niveau à 0 en appuyant sur 'r'
--Un mode debug qui fait déplacer le personnage aléatoirement si on appuie sur 'd' et on peut retirer le mode debug en appuyant une nouvelle fois sur 'd'.
+-Aller Ã  la sortie pour finir le niveau.
+-Un mode reset qui remet le niveau Ã  0 en appuyant sur 'r'
+-Un mode debug qui fait dÃ©placer le personnage alÃ©atoirement si on appuie sur 'd' et on peut retirer le mode debug en appuyant une nouvelle fois sur 'd'.
 
-Toutes les textures de ce projet ont été réalisées par Alan, qui s'est juste inspiré du jeu 'minecraft' pour la terre. Le reste n'étant pas pris d'images
-appartenant à d'autres personnes.
+Toutes les textures de ce projet ont Ã©tÃ© rÃ©alisÃ©es par Alan, qui s'est juste inspirÃ© du jeu 'minecraft' pour la terre. Le reste n'Ã©tant pas pris d'images
+appartenant Ã  d'autres personnes.
 
-Pour ce qui est du code, pour générer le niveau nous avons décidé de lire la variable string ligne par ligne en mettant les coordonnées de chaque type de bloc rencontré
-dans une liste correspondant au type de bloc elle même imbriquée dans une plus grande liste. Nous aurions pu faire une grande liste correspondant au statut de chaque case
-mais cette option semblait plus compliquée à mettre en oeuvre.
+Pour ce qui est du code, pour gÃ©nÃ©rer le niveau nous avons dÃ©cidÃ© de lire la variable string ligne par ligne en mettant les coordonnÃ©es de chaque type de bloc rencontrÃ©
+dans une liste correspondant au type de bloc elle mÃªme imbriquÃ©e dans une plus grande liste. Nous aurions pu faire une grande liste correspondant au statut de chaque case
+mais cette option semblait plus compliquÃ©e Ã  mettre en oeuvre.
 
-Pour ce qui est du déplacement du personnage et de l'affichage, nous avons reprit en grande partie le tp de snake. Pour vérifier si il avait bien le droit de se déplacer
-sur une case donnée, nous gardions 2 coordonnées du personnage, celles avant le déplacement, celles après le déplacement et nous regardions si il était dans une autre liste
-si la case était vide on garde les coordonnées après le déplacement, sinon on garde celles d'avant. Si il arrive sur de la terre nous retirions les coordonnées de rockford après le déplacement 
-de la liste terre. Nous faisions la même chose pour savoir si il est possible de pousser un rocher en nous basant sur la direction dans laquelle il était bloqué.
+Pour ce qui est du dÃ©placement du personnage et de l'affichage, nous avons reprit en grande partie le tp de snake. Pour vÃ©rifier si il avait bien le droit de se dÃ©placer
+sur une case donnÃ©e, nous gardions 2 coordonnÃ©es du personnage, celles avant le dÃ©placement, celles aprÃ¨s le dÃ©placement et nous regardions si il Ã©tait dans une autre liste
+si la case Ã©tait vide on garde les coordonnÃ©es aprÃ¨s le dÃ©placement, sinon on garde celles d'avant. Si il arrive sur de la terre nous retirions les coordonnÃ©es de rockford aprÃ¨s le dÃ©placement 
+de la liste terre. Nous faisions la mÃªme chose pour savoir si il est possible de pousser un rocher en nous basant sur la direction dans laquelle il Ã©tait bloquÃ©.
 
-Pour ce qui est de la fin de partie, le joueur gagne uniquement si il arrive à la sortie, nous n'avons pas mis en place de système pour compter les diamants
+Pour ce qui est de la fin de partie, le joueur gagne uniquement si il arrive Ã  la sortie, nous n'avons pas mis en place de systÃ¨me pour compter les diamants
 
-Pour que le joueur perde, c'était le cas le plus dur à gérer du projet, il doit se situer en dessous d'une case de rocher et descendre vers le bas, en effet, dans ce cas
-le rocher l'écrase. Si il se déplace sur le coté il est sauvé. L'idéal aurait été de permettre au joueur de fuir la chute du rocher si il continue de se déplacer vers
-le bas mais nous n'avons pas réussit.
+Pour que le joueur perde, c'Ã©tait le cas le plus dur Ã  gÃ©rer du projet, il doit se situer en dessous d'une case de rocher et descendre vers le bas, en effet, dans ce cas
+le rocher l'Ã©crase. Si il se dÃ©place sur le cotÃ© il est sauvÃ©. L'idÃ©al aurait Ã©tÃ© de permettre au joueur de fuir la chute du rocher si il continue de se dÃ©placer vers
+le bas mais nous n'avons pas rÃ©ussit.
 
-Pour réaliser ce programme nous avons eu besoin de 3 modules:
--upemtk pour représenter le jeu et insérer des images.
--time pour ralentir le mode debug et permettre à l'utilisateur de voir les déplacements de son personnage.
--random principalement pour choisir aléatoirement une direction dans le mode debug.
+Pour rÃ©aliser ce programme nous avons eu besoin de 3 modules:
+-upemtk pour reprÃ©senter le jeu et insÃ©rer des images.
+-time pour ralentir le mode debug et permettre Ã  l'utilisateur de voir les dÃ©placements de son personnage.
+-random principalement pour choisir alÃ©atoirement une direction dans le mode debug.
 
 ****************************************PHASE 2****************************************
 
-Dans le cadre de cette phase 2, un changement majeur a été éffectué, plutot que de stocker les coordonnées de tous les objets dans une liste. Nous avons décidé de modifier la structure pour qu'une matrice
-puisse correspondre à notre niveau et chaque case stock le type d'objet. Qui peuvent être:
+Dans le cadre de cette phase 2, un changement majeur a Ã©tÃ© Ã©ffectuÃ©, plutot que de stocker les coordonnÃ©es de tous les objets dans une liste. Nous avons dÃ©cidÃ© de modifier la structure pour qu'une matrice
+puisse correspondre Ã  notre niveau et chaque case stock le type d'objet. Qui peuvent Ãªtre:
 
 -W pour les murs
 -R pour rockford
 -B pour les rochers
 -F pour les rochers en chute (nous reviendrons dessus)
--E pour la sortie fermée
+-E pour la sortie fermÃ©e
 -S pour la sortie ouverte (nous reviendrons aussi dessus)
 -D pour le diamants
 -T pour le diamants qui tombe (idem)
 
-Ainsi, nous avons mis en place dans le cadre de la phase 2 un systeme permettant à ce que seul un rocher dans un état de chute et d'éboulement puisse tuer notre
-personnage. Ainsi, le rocher en état de chute est modélisé par le "F" et nous pouvons plus facilement permettre à l'utilisateur de lui échapper.
-Cette fonctionnalité marche de la même manière pour les diamants car nous avons implémenté leur chute.
+Ainsi, nous avons mis en place dans le cadre de la phase 2 un systeme permettant Ã  ce que seul un rocher dans un Ã©tat de chute et d'Ã©boulement puisse tuer notre
+personnage. Ainsi, le rocher en Ã©tat de chute est modÃ©lisÃ© par le "F" et nous pouvons plus facilement permettre Ã  l'utilisateur de lui Ã©chapper.
+Cette fonctionnalitÃ© marche de la mÃªme maniÃ¨re pour les diamants car nous avons implÃ©mentÃ© leur chute.
 
-Comme nouvelle fonctionnalité nous avons aussi permis à l'utilisateur d'entrer le nom d'un fichier niveau en paramètre pour que le programme puisse le lire 
-si aucun fichier n'est donné en paramètre ou alors qu'il est introuvable, le programme crée lui même et enregistre dans un fichier à part un niveau aléatoire pour
-ensuite pouvoir le lire. Pour se faire, nous créons aléatoirement une matrice qui a une certaine taille choisie aléatoirement dans un intervalle afin d'y ajouter tous
+Comme nouvelle fonctionnalitÃ© nous avons aussi permis Ã  l'utilisateur d'entrer le nom d'un fichier niveau en paramÃ¨tre pour que le programme puisse le lire 
+si aucun fichier n'est donnÃ© en paramÃ¨tre ou alors qu'il est introuvable, le programme crÃ©e lui mÃªme et enregistre dans un fichier Ã  part un niveau alÃ©atoire pour
+ensuite pouvoir le lire. Pour se faire, nous crÃ©ons alÃ©atoirement une matrice qui a une certaine taille choisie alÃ©atoirement dans un intervalle afin d'y ajouter tous
 les blocs qui peuvent avoir un nombre variable d'occurences pour ensuite y rajouter ceux qui doivent avoir un nombre fixe (comme Rockford par exemple).
 
 De plus, lorsque l'utilisateur quitte le programme en cliquant sur la croix, nous sauvegardons le niveau dans un fichier sous la forme nomniveausave.txt .
 
-Nous avons aussi inséré un chronomètre et un compteur de diamants, et lorsque l'utilisateur a collecté le nombre minimum de diamants stipulé dans le niveau
-il peut emprunter la sortie, d'où l'ajout de 2 types de sorties: sortie ouverte et fermée. Et lors de la fin de jeu (soit le joueur est mort soit il a emprunté
-la sortie), nous calculons son score en fonction du temps restant et du nombre de diamants collectés et lui affichons les 10 meilleurs scores pour ce niveau.
+Nous avons aussi insÃ©rÃ© un chronomÃ¨tre et un compteur de diamants, et lorsque l'utilisateur a collectÃ© le nombre minimum de diamants stipulÃ© dans le niveau
+il peut emprunter la sortie, d'oÃ¹ l'ajout de 2 types de sorties: sortie ouverte et fermÃ©e. Et lors de la fin de jeu (soit le joueur est mort soit il a empruntÃ©
+la sortie), nous calculons son score en fonction du temps restant et du nombre de diamants collectÃ©s et lui affichons les 10 meilleurs scores pour ce niveau.
 
-Le problème majeur que nous ayons rencontré est que la bibliothèque upemtk semble avoir plus de mal pour afficher des images. Et comme nous demandons à notre programme
-de réafficher toutes les cases à chaque tour, cela peut engendrer quelques ralentissements. 3 solutions ont alors été envisagées:
+Le problÃ¨me majeur que nous ayons rencontrÃ© est que la bibliothÃ¨que upemtk semble avoir plus de mal pour afficher des images. Et comme nous demandons Ã  notre programme
+de rÃ©afficher toutes les cases Ã  chaque tour, cela peut engendrer quelques ralentissements. 3 solutions ont alors Ã©tÃ© envisagÃ©es:
 - Afficher certains objets avec des formes simple. Un cercle par exemple pour un rocher.
-- Réduire la qualité des images.
-- Ne réafficher seulement les blocs ayant été modifié. Cependant, pour cette solution nous devons utiliser les "tags" liés aux images et ils semblent avoir
+- RÃ©duire la qualitÃ© des images.
+- Ne rÃ©afficher seulement les blocs ayant Ã©tÃ© modifiÃ©. Cependant, pour cette solution nous devons utiliser les "tags" liÃ©s aux images et ils semblent avoir
 une limite.
 
 ****************************************PHASE 3****************************************
 
-Nous avons introduit dans cette phase 3 un menu principal avec sélection de niveau ainsi que de sauvegardes (dernière sauvegarde effectuée en globale ou pour un niveau précis) (Extension 2.a).
-L'extension 1.a a été introduite en phase 2 (les roches et diamants vont prendre un certains temps pour effectuer un éboulement).
-Nous avons aussi rajouté une version basse qualité qui peut être activer avec comme paramètre "-l" (pour "l" pour "Low quality") dans la console.
-La dernière sauvegarde effectuée peut être accédé avec le paramètre "-s", si un nom de niveau a été spécifié en premier paramètre et "-s" en deuxième alors la dernière sauvegarde de ce niveau sera prise en compte.
+Nous avons introduit dans cette phase 3 un menu principal avec sÃ©lection de niveau ainsi que de sauvegardes (derniÃ¨re sauvegarde effectuÃ©e en globale ou pour un niveau prÃ©cis) (Extension 2.a).
+L'extension 1.a a Ã©tÃ© introduite en phase 2 (les roches et diamants vont prendre un certains temps pour effectuer un Ã©boulement).
+Nous avons aussi rajoutÃ© une version basse qualitÃ© qui peut Ãªtre activer avec comme paramÃ¨tre "-l" (pour "l" pour "Low quality") dans la console.
+La derniÃ¨re sauvegarde effectuÃ©e peut Ãªtre accÃ©dÃ© avec le paramÃ¨tre "-s", si un nom de niveau a Ã©tÃ© spÃ©cifiÃ© en premier paramÃ¨tre et "-s" en deuxiÃ¨me alors la derniÃ¨re sauvegarde de ce niveau sera prise en compte.
 
-Sur le menu, la touche "S" permet de lancer la dernière sauvegarde globale dans le menu principale sinon la dernière sauvegarde d'un niveau spécifié dans le menu "Niveaux" (il suffit d'écrire le nom du niveau dans ce menu).
-La touche "HD"/"LD" permet de changer la qualité du jeu ("HD" est la qualité normale avec des images et "LD" est la basse qualité avec des formes au lieu d'images à part pour Rockford et la sortie du niveau)
+Sur le menu, la touche "S" permet de lancer la derniÃ¨re sauvegarde globale dans le menu principale sinon la derniÃ¨re sauvegarde d'un niveau spÃ©cifiÃ© dans le menu "Niveaux" (il suffit d'Ã©crire le nom du niveau dans ce menu).
+La touche "HD"/"LD" permet de changer la qualitÃ© du jeu ("HD" est la qualitÃ© normale avec des images et "LD" est la basse qualitÃ© avec des formes au lieu d'images Ã  part pour Rockford et la sortie du niveau)
 
-Nous avons créer ce mode basse qualité car comme spécifié à la fin du Readme Phase 2, nous n'avons pas pu mieux gérer les images.
-Il est donc conseillé de jouer en basse qualité pour moins de "ralentissements".
+Nous avons crÃ©er ce mode basse qualitÃ© car comme spÃ©cifiÃ© Ã  la fin du Readme Phase 2, nous n'avons pas pu mieux gÃ©rer les images.
+Il est donc conseillÃ© de jouer en basse qualitÃ© pour moins de "ralentissements".
 Sinon vous pouvez profitez de nos textures avec le mode "HD".
