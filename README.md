@@ -1,8 +1,10 @@
 # BoulderDash
 Le jeu BoulderDash mais en Python!
 
-## Projet effectué avec Yohan ASTIER
-## Premier projet en DUT Informatique et en études post BAC en général
+### Projet effectué avec Yohan ASTIER
+### Premier projet en DUT Informatique et en études post BAC en général
+
+## Ce projet nécessite d'avoir Python 3 d'installé pour pouvoir lancer le programme
 
 ## Lancer une partie
 
