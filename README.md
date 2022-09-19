@@ -19,7 +19,7 @@ Lancer "menu.py", un menu apparaît avec différentes options :
 
 PROJET PYTHON ASTIER Yohan, GARCIA CALZADA Alan 
 
-****************************************PHASE 1****************************************
+## ****************************************PHASE 1****************************************
 
 Dans ce projet, nous avons produit un programme reproduisant le jeu Boulder Dash.
 Notre programme peut: 
@@ -57,7 +57,7 @@ Pour réaliser ce programme nous avons eu besoin de 3 modules:
 -time pour ralentir le mode debug et permettre à l'utilisateur de voir les déplacements de son personnage.
 -random principalement pour choisir aléatoirement une direction dans le mode debug.
 
-****************************************PHASE 2****************************************
+## ****************************************PHASE 2****************************************
 
 Dans le cadre de cette phase 2, un changement majeur a été éffectué, plutot que de stocker les coordonnées de tous les objets dans une liste. Nous avons décidé de modifier la structure pour qu'une matrice
 puisse correspondre à notre niveau et chaque case stock le type d'objet. Qui peuvent être:
@@ -93,7 +93,7 @@ de réafficher toutes les cases à chaque tour, cela peut engendrer quelques ral
 - Ne réafficher seulement les blocs ayant été modifié. Cependant, pour cette solution nous devons utiliser les "tags" liés aux images et ils semblent avoir
 une limite.
 
-****************************************PHASE 3****************************************
+## ****************************************PHASE 3****************************************
 
 Nous avons introduit dans cette phase 3 un menu principal avec sélection de niveau ainsi que de sauvegardes (dernière sauvegarde effectuée en globale ou pour un niveau précis) (Extension 2.a).
 L'extension 1.a a été introduite en phase 2 (les roches et diamants vont prendre un certains temps pour effectuer un éboulement).
